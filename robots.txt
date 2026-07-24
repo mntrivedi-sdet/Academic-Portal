@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mntrivedi-sdet.github.io/Academic-Portal/sitemap.xml
