@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with Professor | Academic Portal</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <main class="chat-page">
+    <section class="chat-card">
+      <header class="chat-header">
+        <div class="avatar">MT</div>
+        <div>
+          <h1>Chat with Professor</h1>
+          <p>Prof. Monish Trivedi · Academic Portal</p>
+        </div>
+      </header>
+
+      <div id="studentSetup" class="setup-panel">
+        <h2>Start a conversation</h2>
+        <p>Enter your details once to ask your question.</p>
+
+        <label for="studentName">Name</label>
+        <input id="studentName" type="text" placeholder="Your name" required>
+
+        <label for="studentEmail">Email</label>
+        <input id="studentEmail" type="email" placeholder="Your email" required>
+
+        <label for="subject">Subject</label>
+        <select id="subject">
+          <option>Python Programming</option>
+          <option>Database Management</option>
+          <option>Software Engineering</option>
+          <option>Other</option>
+        </select>
+
+        <button id="startBtn" class="primary-btn">Start Chat</button>
+        <p id="setupMessage" class="message"></p>
+      </div>
+
+      <div id="conversationArea" class="conversation-area hidden">
+        <div class="conversation-top">
+          <div>
+            <strong id="studentLabel"></strong>
+            <span id="subjectLabel"></span>
+          </div>
+          <button id="newChatBtn" class="secondary-btn">New Chat</button>
+        </div>
+
+        <div id="messages" class="messages">
+          <div class="empty-state">No messages yet. Send your first question below.</div>
+        </div>
+
+        <form id="messageForm" class="message-form">
+          <textarea id="messageInput" rows="3" maxlength="2000"
+            placeholder="Type your question to Professor Monish Trivedi..." required></textarea>
+          <div class="send-row">
+            <small>Responses may not be immediate.</small>
+            <button class="primary-btn" type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <p id="chatMessage" class="message"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="chat.js"></script>
+</body>
+</html>
