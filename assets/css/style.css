@@ -2798,3 +2798,131 @@ font-weight: 700;
 * 18.END SECTION TOP DESIGN
 * ----------------------------------------------------------------------------------------
 */
+
+/* =========================================
+   19. START WhatsApp Floating Button
+   ========================================= */
+
+.whatsapp-container {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999;
+}
+
+/* WhatsApp round button */
+.whatsapp-float {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+/* WhatsApp logo */
+.whatsapp-logo {
+    width: 34px;
+    height: 34px;
+    fill: white;
+}
+
+/* Popup */
+.whatsapp-popup {
+    position: absolute;
+    right: 0;
+    bottom: 75px;
+
+    width: 280px;
+
+    background: #ffffff;
+    padding: 20px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.20);
+
+    display: none;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Show popup */
+.whatsapp-popup.show {
+    display: block;
+}
+
+/* Popup heading */
+.whatsapp-popup h4 {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    color: #222;
+}
+
+/* Popup text */
+.whatsapp-popup p {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Continue button */
+.whatsapp-popup a {
+    display: block;
+
+    text-align: center;
+
+    background: #25D366;
+    color: #ffffff;
+
+    padding: 11px 12px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background 0.3s ease;
+}
+
+.whatsapp-popup a:hover {
+    background: #1ebe5d;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .whatsapp-container {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .whatsapp-float {
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .whatsapp-popup {
+        width: 250px;
+    }
+}
+/* =========================================
+   19. END START WhatsApp Floating Button
+   ========================================= *
