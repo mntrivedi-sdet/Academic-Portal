@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Python Programming Videos | Prof. Monish Trivedi</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f6f8;
+        color: #222;
+    }
+
+    .video-container {
+        display: flex;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        min-height: 650px;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    /* LEFT PLAYLIST */
+    .playlist {
+        width: 320px;
+        background: #ffffff;
+        border-right: 1px solid #ddd;
+        overflow-y: auto;
+    }
+
+    .playlist-header {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        background: #fafafa;
+    }
+
+    .playlist-header h2 {
+        margin: 0 0 6px;
+        font-size: 20px;
+    }
+
+    .playlist-header p {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .video-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+        transition: background 0.2s;
+    }
+
+    .video-item:hover {
+        background: #f1f3f5;
+    }
+
+    .video-item.active {
+        background: #e9f2ff;
+        border-left: 4px solid #1a73e8;
+    }
+
+    .play-icon {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        border-radius: 50%;
+        background: #1a73e8;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .video-title {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* MAIN PLAYER */
+    .main-content {
+        flex: 1;
+        padding: 25px;
+        background: #f8f9fa;
+    }
+
+    .player-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #000;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .player-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .video-info {
+        padding: 18px 2px;
+    }
+
+    .video-info h1 {
+        margin: 0 0 8px;
+        font-size: 24px;
+    }
+
+    .video-info p {
+        margin: 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+        .video-container {
+            flex-direction: column;
+            border-radius: 0;
+        }
+
+        .playlist {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid #ddd;
+            max-height: 300px;
+        }
+
+        .main-content {
+            padding: 15px;
+        }
+
+        .video-info h1 {
+            font-size: 20px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="video-container">
+
+    <!-- PLAYLIST -->
+    <div class="playlist">
+
+        <div class="playlist-header">
+            <h2>Python Programming</h2>
+            <p>Lecture Videos</p>
+        </div>
+
+        <!-- VIDEO 1 -->
+        <div class="video-item active"
+             onclick="loadVideo(
+                'VIDEO_ID_1',
+                'Introduction to Python'
+             )">
+
+            <div class="play-icon">▶</div>
+
+            <div class="video-title">
+                Introduction to Python
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 2 -->
+        <div class="video-item"
+             onclick="loadVideo(
+                'VIDEO_ID_2',
+                'Variables and Data Types'
+             )">
+
+            <div class="play-icon">▶</div>
+
+            <div class="video-title">
+                Variables and Data Types
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 3 -->
+        <div class="video-item"
+             onclick="loadVideo(
+                'VIDEO_ID_3',
+                'Operators in Python'
+             )">
+
+            <div class="play-icon">▶</div>
+
+            <div class="video-title">
+                Operators in Python
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 4 -->
+        <div class="video-item"
+             onclick="loadVideo(
+                'VIDEO_ID_4',
+                'Conditional Statements'
+             )">
+
+            <div class="play-icon">▶</div>
+
+            <div class="video-title">
+                Conditional Statements
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 5 -->
+        <div class="video-item"
+             onclick="loadVideo(
+                'VIDEO_ID_5',
+                'Loops in Python'
+             )">
+
+            <div class="play-icon">▶</div>
+
+            <div class="video-title">
+                Loops in Python
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN VIDEO -->
+    <div class="main-content">
+
+        <div class="player-wrapper">
+
+            <iframe
+                id="videoPlayer"
+                src="https://drive.google.com/file/d/VIDEO_ID_1/preview"
+                allow="autoplay"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <div class="video-info">
+
+            <h1 id="videoTitle">
+                Introduction to Python
+            </h1>
+
+            <p>
+                Python Programming | Prof. Monish Trivedi
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function loadVideo(videoId, title) {
+
+    // Change video
+    document.getElementById("videoPlayer").src =
+        "https://drive.google.com/file/d/" +
+        videoId +
+        "/preview";
+
+    // Change title
+    document.getElementById("videoTitle").innerText = title;
+
+
+    // Remove active class
+    const items = document.querySelectorAll(".video-item");
+
+    items.forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+
+    // Add active class to clicked item
+    event.currentTarget.classList.add("active");
+}
+
+</script>
+
+</body>
+</html>
